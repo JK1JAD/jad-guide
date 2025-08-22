@@ -2,12 +2,139 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>JADガイド</title>
+  <title>GitHub Pages 公開マニュアル（JAD版）</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root { --ink:#0b132b; --acc:#2a9d8f; --mut:#6b7280; }
+    body{ font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; line-height:1.7; margin:0; color:var(--ink); }
+    header{ padding:28px 16px; border-bottom:1px solid #eee; }
+    main{ max-width:860px; margin:0 auto; padding:24px 16px 80px; }
+    h1{ margin:.2em 0 .2em; font-size:clamp(28px,4vw,38px); }
+    h2{ margin-top:2.2em; padding-top:.2em; border-top:2px solid #eee; }
+    h3{ margin-top:1.6em; }
+    .muted{ color:var(--mut); }
+    .badge{ display:inline-block; font-size:.85em; background:rgba(42,157,143,.12); color:var(--acc); padding:.2em .5em; border-radius:.6em; }
+    .toc{ background:#fafafa; border:1px solid #eee; border-radius:12px; padding:16px; }
+    .toc a{ color:var(--acc); text-decoration:none; }
+    code, pre{ background:#f6f8fa; border:1px solid #e5e7eb; border-radius:6px; }
+    code{ padding:.1em .35em; }
+    pre{ padding:12px; overflow:auto; }
+    a{ color:var(--acc); }
+    .step{ border-left:4px solid var(--acc); padding:12px 12px 12px 14px; background:rgba(42,157,143,.05); border-radius:8px; }
+    footer{ text-align:center; color:#9aa1aa; padding:40px 12px; border-top:1px solid #eee; }
+    img{ max-width:100%; height:auto; border-radius:8px; border:1px solid #eee; }
+    ul.tight>li{ margin:.25em 0; }
+  </style>
 </head>
 <body>
-  <h1>JADガイド公開テスト</h1>
-  <p>こんにちは！これは最初のGitHub Pagesサイトです 🎉</p>
-  <hr>
-  <p>公開日: 2025-08-22</p>
+  <header>
+    <div class="badge">JAD運用マニュアル</div>
+    <h1>GitHub Pages 公開マニュアル（シンプル最短ルート）</h1>
+    <p class="muted">最終更新：<span id="updated"></span> ／ 作成：ふじさわたけひこ（監修：JAD）</p>
+  </header>
+
+  <main>
+    <div class="toc">
+      <strong>目次</strong>
+      <ol>
+        <li><a href="#prep">事前準備</a></li>
+        <li><a href="#repo">① リポジトリを作成</a></li>
+        <li><a href="#index">② index.html を作る</a></li>
+        <li><a href="#pages">③ GitHub Pages を有効化</a></li>
+        <li><a href="#check">④ 公開を確認</a></li>
+        <li><a href="#images">画像の入れ方</a></li>
+        <li><a href="#trouble">トラブルシューティング</a></li>
+        <li><a href="#glossary">用語ミニ辞典</a></li>
+      </ol>
+    </div>
+
+    <h2 id="prep">事前準備</h2>
+    <ul class="tight">
+      <li>GitHubにログイン済みであること</li>
+      <li>ユーザー名（例：<code>JK1JAD</code>）を確認</li>
+    </ul>
+    <p class="muted">JADの一言：まずは周波数合わせから。落ち着いていけばQSO成功💪</p>
+
+    <h2 id="repo">① リポジトリを作成</h2>
+    <div class="step">
+      <ol>
+        <li>右上「＋」→ <strong>New repository</strong></li>
+        <li>Repository name：例 <code>jad-guide</code></li>
+        <li><strong>Public</strong> を選ぶ（Pages公開のため）</li>
+        <li><em>Add a README</em> にチェック（任意）</li>
+        <li><strong>Create repository</strong> をクリック</li>
+      </ol>
+    </div>
+
+    <h2 id="index">② index.html を作る</h2>
+    <p>メモ帳などで次の内容を作り、<strong>index.html</strong> という名前で保存して、リポジトリにアップロードします。</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;JADガイド&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;JADガイド公開テスト&lt;/h1&gt;
+  &lt;p&gt;こんにちは！これは最初のGitHub Pagesサイトです 🎉&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    <p>GitHub上では、<strong>「Add file → Upload files」</strong> からドラッグ＆ドロップでOK。</p>
+
+    <h2 id="pages">③ GitHub Pages を有効化</h2>
+    <div class="step">
+      <ol>
+        <li>リポジトリの <strong>Settings</strong> → 左メニュー <strong>Pages</strong></li>
+        <li>Branch：<strong>main</strong> ／ フォルダ：<strong>/(root)</strong></li>
+        <li><strong>Save</strong> をクリック（数分でデプロイ完了）</li>
+      </ol>
+    </div>
+
+    <h2 id="check">④ 公開を確認</h2>
+    <ul>
+      <li>公開URL（例）：<code>https://JK1JAD.github.io/jad-guide/</code></li>
+      <li>表示されない場合は <a href="#trouble">トラブルシューティング</a> へ</li>
+    </ul>
+
+    <h2 id="images">画像の入れ方</h2>
+    <ol>
+      <li>リポジトリに <code>images</code> フォルダを作成（「Add file → Create new file」で <code>images/.keep</code> として作る方法が簡単）</li>
+      <li>画像（PNG/JPG）を <strong>images</strong> にアップロード</li>
+      <li>HTMLに記述：
+        <pre><code>&lt;img src="images/screenshot-pages.png" alt="Pages設定画面の例" width="640"&gt;</code></pre>
+      </li>
+    </ol>
+    <p class="muted">※ 画像ファイル名は半角英数・小文字・スペースなしが吉（電波はクリアに）。</p>
+
+    <h2 id="trouble">トラブルシューティング</h2>
+    <ul>
+      <li><strong>404になる／古い内容が出る</strong>：数分待ってリロード。<code>Ctrl+F5</code> でキャッシュクリア。</li>
+      <li><strong>真っ白</strong>：ファイル名が <code>index.html</code> か確認。拡張子 <code>.txt</code> になっていないか。</li>
+      <li><strong>日本語が文字化け</strong>：<code>&lt;meta charset="UTF-8"&gt;</code> を入れて、UTF-8で保存。</li>
+      <li><strong>デプロイに失敗</strong>：リポジトリ右側の「Environments → github-pages」からログを確認。</li>
+    </ul>
+
+    <h2 id="glossary">用語ミニ辞典</h2>
+    <ul>
+      <li><strong>リポジトリ</strong>：プロジェクトの“作業場”。</li>
+      <li><strong>コミット</strong>：変更の保存（ログ記録）。</li>
+      <li><strong>プッシュ</strong>：ローカルからGitHubへ送信。</li>
+      <li><strong>GitHub Pages</strong>：リポジトリをWebサイトとして公開できる機能。</li>
+    </ul>
+
+    <p class="muted">ボケ：『たった1枚で開局ってマジ？』／ ツッコミ：『マジ。交信（公開）は正しい周波数＝index.htmlから！』</p>
+  </main>
+
+  <footer>
+    © 2025 JAD / JK1JAD — CQ CQ CQ…　次の章も作っていきましょう📡
+  </footer>
+
+  <script>
+    // 今日の日付を自動表示
+    const d = new Date();
+    const z = n=> String(n).padStart(2,'0');
+    document.getElementById('updated').textContent =
+      `${d.getFullYear()}-${z(d.getMonth()+1)}-${z(d.getDate())}`;
+  </script>
 </body>
 </html>
