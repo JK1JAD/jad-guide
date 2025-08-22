@@ -24,6 +24,16 @@
     footer{ text-align:center; color:#9aa1aa; padding:40px 12px; border-top:1px solid #eee; }
     img{ max-width:100%; height:auto; border-radius:8px; border:1px solid #eee; }
     ul.tight>li{ margin:.25em 0; }
+ 
+  /* ---- スクショ解説 ---- */
+figure.shot{ margin:24px 0; background:#fafafa; border:1px solid #eee; border-radius:12px; padding:14px }
+figure.shot img{ width:100%; height:auto; border-radius:8px; border:1px solid #eaeaea }
+figure.shot figcaption{ margin-top:10px; color:#374151 }
+.stepnum{ display:inline-block; width:1.6em; height:1.6em; border-radius:999px; background:rgba(42,157,143,.15); color:#0b132b; text-align:center; line-height:1.6em; font-weight:700; margin-right:.4em }
+.gallery{ display:grid; gap:14px; grid-template-columns:1fr }
+@media (min-width:720px){ .gallery{ grid-template-columns:1fr 1fr } }
+a.zoom{ text-decoration:none; }
+
   </style>
 </head>
 <body>
@@ -91,6 +101,34 @@
     </div>
 
     <h2 id="check">④ 公開を確認</h2>
+  <h2 id="screenshots">スクショで手順解説</h2>
+
+<div class="gallery">
+  <figure class="shot">
+    <a class="zoom" href="images/repo-created.png" target="_blank">
+      <img src="images/repo-created.png" alt="新規リポジトリ作成後の画面" loading="lazy">
+    </a>
+    <figcaption><span class="stepnum">1</span>「＋ → New repository」から作成。<code>Public</code> を選択、READMEは付けてもOK。</figcaption>
+  </figure>
+
+  <figure class="shot">
+    <a class="zoom" href="images/index-upload.png" target="_blank">
+      <img src="images/index-upload.png" alt="index.html をアップロードする画面" loading="lazy">
+    </a>
+    <figcaption><span class="stepnum">2</span>「Add file → Upload files」で <code>index.html</code> を追加し、<em>Commit changes</em>。</figcaption>
+  </figure>
+
+  <figure class="shot">
+    <a class="zoom" href="images/pages-settings.png" target="_blank">
+      <img src="images/pages-settings.png" alt="Settings→Pages の設定例（Branch: main / root）" loading="lazy">
+    </a>
+    <figcaption><span class="stepnum">3</span><strong>Settings → Pages</strong> で Branch を <code>main</code>、フォルダを <code>/(root)</code> に設定→ <em>Save</em>。</figcaption>
+  </figure>
+</div>
+
+<p class="muted">💡 画像をクリックすると新しいタブで原寸表示されます（細部確認に便利）。</p>
+
+    
     <ul>
       <li>公開URL（例）：<code>https://JK1JAD.github.io/jad-guide/</code></li>
       <li>表示されない場合は <a href="#trouble">トラブルシューティング</a> へ</li>
@@ -138,3 +176,4 @@
   </script>
 </body>
 </html>
+
